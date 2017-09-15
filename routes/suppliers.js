@@ -13,7 +13,7 @@ router.get('/', function (req, res){
 
 /*                      add                 */
 
-router.get('suppliers/add',function(req,res){
+router.get('suppliers/add',function(req, res){
   res.render('addSupplier', {err: false})
 })
 
