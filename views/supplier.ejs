@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> contacts </title>
+    </head>
+
+    <body>
+        <h1>Halaman Suppliers</h1>
+        <a href="/">Back to Home</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>nama</th>
+                    <th>kota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% dataSuplier.forEach( row => { %>
+                <tr>
+                    <td><%=row.name%></td>
+                    <td><%=row.kota%></td>
+
+                    <td>
+                        <a href="/suppliers/edit/<%=row.id%>">Edit</a>
+                        <a href="/suppliers/delete/<%=row.id%>"onclick="return confirm (' Delete this ?? ')">Delete</a>
+                    </td>
+                </tr>
+                <% })%>
+            </tbody>
+        </table>
+        <form class="" action="/suppliers/add" method="POST">
+            <input type="text" name="name" placeholder="Name"> <br>
+            <input type="text" name="kota" placeholder="kota"><br>
+
+
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
